@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, request
 
+from .models import Notes
+from . import db
 
 views = Blueprint('views', __name__)
 
@@ -7,8 +9,7 @@ views = Blueprint('views', __name__)
 def index():
     if request.method == 'POST':
         note_val = request.form['noteVal']
-        
-        note = Notes(user_id=current_user.id, text=note_val)
+        note = Notes(text=note_val)
         db.session.add(note)
         db.session.commit()
     elif request.method == 'DELETE':
@@ -17,7 +18,6 @@ def index():
         
         db.session.delete(note)
         db.session.commit()
-    notes = Notes.query.filter_by(user_id=current_user.id).all() \
-            if current_user.is_authenticated else ''
-    
+
+    notes = Notes.query.all()
     return render_template('index.html', notes=notes)
