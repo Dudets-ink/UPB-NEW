@@ -1,0 +1,25 @@
+{% extends 'test_flask/base.html' %}
+{% block stylesheet %}
+    {{ url_for('static', filename='test_flask/css/index.css') }}"
+{% endblock stylesheet %}
+
+{% block body %}
+    <h1> Input notes </h1>
+    <form id='form-list'>
+        <input type='text' id='input-note' required>
+        <button type='submit' id='enter-note'>Enter</button>
+    </form>
+    <ul id='notes'>
+            {% for note in notes%}
+                <li id="{{note.id}}">
+                    {{note.text}}
+                </li>
+                <button onclick="delNote('{{note.id}}')">Delete</button>
+            <hr>
+            {% endfor%}
+    </ul>
+{% endblock body %}
+
+{# {% block script %}
+    {{ url_for('static', filename='test_flask/js/index.js') }}
+{% endblock script %} #}

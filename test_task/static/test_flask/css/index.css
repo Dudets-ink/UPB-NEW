@@ -1,0 +1,13 @@
+.to-do-list {
+    display: inline-block;
+    margin-left: 25%;
+    margin-top: 10%;
+    overflow-x:hidden;
+    width: 25%;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#delete-note {
+    display:none;
+}
