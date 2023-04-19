@@ -20,4 +20,4 @@ def index():
         db.session.commit()
 
     notes = Notes.query.all()
-    return render_template('index.html', notes=notes)
+    return render_template('test_flask/index.html', notes=notes)

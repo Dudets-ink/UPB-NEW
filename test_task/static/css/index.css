@@ -6,6 +6,7 @@
     width: 25%;
     word-wrap: break-word;
     word-break: break-all;
+    background: red;
 }
 
 #delete-note {

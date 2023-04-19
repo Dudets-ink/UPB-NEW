@@ -1,6 +1,6 @@
 {% extends 'test_flask/base.html' %}
 {% block stylesheet %}
-    {{ url_for('static', filename='test_flask/css/index.css') }}"
+    {{ url_for('static', filename='css/index.css') }}"
 {% endblock stylesheet %}
 
 {% block body %}
@@ -20,6 +20,6 @@
     </ul>
 {% endblock body %}
 
-{# {% block script %}
-    {{ url_for('static', filename='test_flask/js/index.js') }}
-{% endblock script %} #}
+{% block script %}
+    {{ url_for('static', filename='js/index.js') }}
+{% endblock script %}
