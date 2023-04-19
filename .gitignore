@@ -1,5 +1,9 @@
 venv/
 
+**/migrations/
+migrations/
+__pycache__/
+
 *.pyc
 **/__pycache__/
 
